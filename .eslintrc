@@ -1,0 +1,62 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "settings": {
+        "react": {
+            "version": "15.0"
+        },
+        "polyfills": [
+            "promises"
+        ]
+    },
+    "plugins": ["react"],
+    "extends": [
+        "eslint:recommended",
+        "fbjs",
+        "plugin:react/recommended",
+        "plugin:compat/recommended"
+    ],
+    "rules": {
+        "no-console": "off",
+        "class-methods-use-this": "off",
+        "consistent-return": "off",
+        "default-case": "off",
+        "indent": [ "error", 4, { 
+            "ObjectExpression": "first",
+            "ArrayExpression": "first",
+            "SwitchCase": 1
+        }],
+        "key-spacing": [ "off" ],
+        "max-len": [ "error", 120, {
+            "ignoreUrls": true,
+            "ignoreComments": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true,
+            "ignorePattern": "(^import.*)|(.*(console)|(debug).log.*)|(bodyText:).*|(<path).*|(<polygon).*"
+        }],
+        "no-shadow": "off",
+        "no-var": "error",
+        "object-curly-spacing": ["error", "always"],
+        "operator-linebreak": [ "error" ],
+        "no-param-reassign": "off",
+        "no-unused-vars": [ "error", { 
+            "argsIgnorePattern": "(rej(ect)?)",
+            "caughtErrors": "none",
+            "varsIgnorePattern": "ReactDOM" 
+        }],
+        "react/prop-types": [ "off" ],
+        "react/jsx-curly-spacing": [ "error", { "when": "always" } ],
+        "react/jsx-indent-props": [ "error", 4 ],
+        "react/react-in-jsx-scope": [ "off" ],
+        "react/jsx-no-target-blank": ["off"]
+    },
+    "env": {
+        "node" : true,
+        "jquery" : true
+    }
+}
