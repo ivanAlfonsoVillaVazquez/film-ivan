@@ -1,6 +1,6 @@
 {
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 8,
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
@@ -11,18 +11,29 @@
             "version": "15.0"
         },
         "polyfills": [
-            "promises"
+            "Promise"
         ]
     },
-    "plugins": ["react"],
+    "plugins": [
+        "react", 
+        "compat"
+    ],
     "extends": [
         "eslint:recommended",
-        "fbjs",
         "plugin:react/recommended",
-        "plugin:compat/recommended"
+        "plugin:compat/recommended",
+        "plugin:import/warnings"
     ],
+    "ignorePatterns": ["**/test/*.js"],
     "rules": {
         "no-console": "off",
+        "no-restricted-syntax": [
+            "error",
+            {
+                "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+                "message": "Unexpected property on console object was called"
+            }
+        ],
         "class-methods-use-this": "off",
         "consistent-return": "off",
         "default-case": "off",
@@ -32,13 +43,14 @@
             "SwitchCase": 1
         }],
         "key-spacing": [ "off" ],
-        "max-len": [ "error", 120, {
+        "max-len": [ "error", 180, {
             "ignoreUrls": true,
             "ignoreComments": true,
             "ignoreTemplateLiterals": true,
             "ignoreRegExpLiterals": true,
             "ignorePattern": "(^import.*)|(.*(console)|(debug).log.*)|(bodyText:).*|(<path).*|(<polygon).*"
         }],
+        "no-trailing-spaces": "warn",
         "no-shadow": "off",
         "no-var": "error",
         "object-curly-spacing": ["error", "always"],
@@ -51,12 +63,13 @@
         }],
         "react/prop-types": [ "off" ],
         "react/jsx-curly-spacing": [ "error", { "when": "always" } ],
-        "react/jsx-indent-props": [ "error", 4 ],
         "react/react-in-jsx-scope": [ "off" ],
-        "react/jsx-no-target-blank": ["off"]
+        "react/jsx-no-target-blank": ["off"],
+        "compat/compat": "error"
     },
     "env": {
         "node" : true,
-        "jquery" : true
-    }
+        "browser": true
+      },
+      "parser": "babel-eslint"
 }

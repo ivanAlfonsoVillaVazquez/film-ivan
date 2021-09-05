@@ -12,7 +12,7 @@
     "carbon-components": "^10.25.0",
     "carbon-components-react": "^7.25.0",
     "carbon-icons": "^7.0.7",
-    "eslint": "^7.32.0",
+    "eslint-plugin-compat": "^3.8.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -22,13 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint": "node_modules/.bin/eslint ./server/app.js ./server/main.js ./server/routes/* ./src/components/* --ext .jsx,.js"
   },
   "browserslist": {
     "production": [

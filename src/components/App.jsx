@@ -1,14 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './Header';
+import '../styles/index.css';
+import Navbar from './Navbar';
+import '../../node_modules/carbon-components/css/carbon-components.css';
 
 function App() {
-  return (
-    <div className="App">
-      <Header/>    
+    return (
+        <div className="App">
+            <Navbar/>
 
-      </div>
-  );
+        </div>
+    );
 }
 
 export default App;
