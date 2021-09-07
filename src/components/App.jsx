@@ -1,12 +1,13 @@
 import '../styles/index.css';
 import Navbar from './Navbar';
 import '../../node_modules/carbon-components/css/carbon-components.css';
+import Body from './Body';
 
 function App() {
     return (
-        <div className="App">
+        <div id="App">
             <Navbar/>
-
+            <Body/>
         </div>
     );
 }

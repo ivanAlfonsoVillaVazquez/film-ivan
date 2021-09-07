@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +12,51 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+  height: 100%;
+}
+
+
+/* -- NavBar -- */
+
+.bx--header{
+  order: 1;
+  position: inherit !important;
+}
+
+.bx--header__action{
+  color: white;
+}
+
+/* -- Container -- */
+
+.container {
+  /* background: #F3F3F3; */
+  margin: 0% 4%;
+  padding: 2% 0%;
+  height: 100%;
+  order: 3;
+}
+
+/* -- Container -- */
+
+.suggestion{
+  padding: 1rem;
+  cursor: pointer;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.suggestion:hover{
+  background-color: grey;
 }
