@@ -18,6 +18,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -25,18 +27,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "node_modules/.bin/eslint ./server/app.js ./server/main.js ./server/routes/* ./src/components/* --ext .jsx,.js"
+    "lint": "node_modules/.bin/eslint ./src/components/* --ext .jsx,.js"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    "defaults",
+    "not dead",
+    "not ie <=11",
+    "not Baidu >=0",
+    "not op_mini all",
+    "last 5 safari versions",
+    "last 5 chrome versions",
+    "last 5 firefox versions",
+    "last 5 Edge versions",
+    "last 2 iOS versions"
+  ]
 }
