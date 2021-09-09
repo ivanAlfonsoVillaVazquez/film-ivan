@@ -1,7 +1,7 @@
 import React from 'react';
+import './matchMedia';
 import Enzyme, { shallow } from 'enzyme';
 import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
-
 import App from '../components/App';
 import Navbar from '../components/Navbar';
 

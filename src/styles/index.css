@@ -47,16 +47,37 @@ code {
   order: 3;
 }
 
-/* -- Container -- */
+/* -- Search -- */
+
+.row_search{
+  position: fixed;
+  width: 70%;
+  margin-left: 10%;
+}
 
 .suggestion{
   padding: 1rem;
   cursor: pointer;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
+  background-color: white;
 }
 
 .suggestion:hover{
-  background-color: grey;
+  background-color: rgb(197, 197, 197);
+}
+
+/* -- Banner -- */
+
+.banner img {
+  margin-top: -10%;
+  width: 90%;
+}
+
+.banner-text{
+  margin-top: 8rem;
+}
+
+/* -- Sliders -- */
+
+.slider1{
+  margin-top: 3rem;
 }

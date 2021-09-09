@@ -1,7 +1,11 @@
 import React from 'react';
+import './matchMedia';
 import Enzyme, { shallow } from 'enzyme';
 import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
+import Body from '../components/Body';
 import Search from '../components/Search';
+import Banner from '../components/Banner';
+import Sliders from '../components/Sliders';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
@@ -18,20 +22,22 @@ const films = [
         title: 'Howl\'s Moving Castle'},
 ]
 
-test('render Search component', () => {
+test('render Body component', () => {
+    const wrapper = shallow(<Body/>);
+    expect(wrapper.exists()).toBe(true);
+});
+
+test('render Search', () => {
     const wrapper = shallow(<Search/>);
     expect(wrapper.exists()).toBe(true);
 });
 
-test('Search a film', () => {
-    const wrapper = shallow(<Search films={ films }/>);
-    const search = wrapper.find('#search');
-    //Search The cat returns film successfully
-    search.simulate('change', { target: { value: 'cat' } });
-    const good_suggestion = wrapper.find('.suggestion').text();
-    expect(good_suggestion).toBe('The Cat Returns');
+test('render Banner', () => {
+    const wrapper = shallow(<Banner/>);
+    expect(wrapper.exists()).toBe(true);
+});
 
-    //Search dog film without suggestions
-    search.simulate('change', { target: { value: 'dog' } });
-    expect(wrapper.find('.suggestion')).toHaveLength(0);
-})
+test('render Sliders', () => {
+    const wrapper = shallow(<Sliders films={ films }/>);
+    expect(wrapper.exists()).toBe(true);
+});

@@ -1,4 +1,4 @@
-import { Search } from 'carbon-components-react'
+import { Search, Row, Column } from 'carbon-components-react'
 import React, { useState } from 'react'
 
 const Searchs = (props) => {
@@ -23,29 +23,31 @@ const Searchs = (props) => {
     }
 
     return (
-        <div>
-            <Search
-                id="search"
-                labelText="Buscador"
-                onChange={ e => onChangeHandler(e.target.value) }
-                value={ text }
-                onBlur={ () => {
-                    setTimeout(() => {
-                        setSuggestions([])
-                    }, 400);
-                } }
-            />
-            {
-                suggestions && suggestions.map((suggestion) => (
-                    <div
-                        key={ suggestion.id }
-                        className="suggestion"
-                        onClick={ () => onSuggestHandler(suggestion.title) }>
-                        { suggestion.title}
-                    </div>
-                ))
-            }
-        </div>
+        <Row className="row_search">
+            <Column sm={ { span: 4 } } md={ { span:4, offset: 2 } }>
+                <Search
+                    id="search"
+                    labelText="Buscador"
+                    onChange={ e => onChangeHandler(e.target.value) }
+                    value={ text }
+                    onBlur={ () => {
+                        setTimeout(() => {
+                            setSuggestions([])
+                        }, 400);
+                    } }
+                />
+                {
+                    suggestions && suggestions.map((suggestion) => (
+                        <div
+                            key={ suggestion.id }
+                            className="suggestion"
+                            onClick={ () => onSuggestHandler(suggestion.title) }>
+                            { suggestion.title}
+                        </div>
+                    ))
+                }
+            </Column>
+        </Row>
     )
 }
 
