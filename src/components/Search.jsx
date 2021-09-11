@@ -1,5 +1,6 @@
 import { Search, Row, Column } from 'carbon-components-react'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Searchs = (props) => {
     const [text, setText] = useState('')
@@ -15,11 +16,6 @@ const Searchs = (props) => {
         }
         setSuggestions(matches)
         setText(text)
-    }
-
-    const onSuggestHandler = (text) => {
-        setText(text)
-        setSuggestions([])
     }
 
     return (
@@ -38,12 +34,23 @@ const Searchs = (props) => {
                 />
                 {
                     suggestions && suggestions.map((suggestion) => (
-                        <div
+                        <Link
                             key={ suggestion.id }
-                            className="suggestion"
-                            onClick={ () => onSuggestHandler(suggestion.title) }>
-                            { suggestion.title}
-                        </div>
+                            className="title-link"
+                            to={ {
+                                pathname: "/film",
+                                state: {
+                                    film: suggestion,
+                                },
+                            } }
+                        >
+                            <div
+                                className="suggestion"
+                            >
+                                { suggestion.title}
+                            </div>
+                        </Link>
+
                     ))
                 }
             </Column>

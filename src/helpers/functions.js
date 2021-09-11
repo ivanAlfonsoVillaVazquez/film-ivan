@@ -7,18 +7,24 @@ const api_address = 'https://api.themoviedb.org/3/';
  * @return {[Array]}      [Films array with the images info]
 */
 const addInfo = async (films) => {
-    // eslint-disable-next-line no-undef
-    let final_films = await Promise.all(
-        films.map( async (film) => {
-            let detail = await searchDetails(film.title);
-            let result = { ...film }
-            result['backdrop_path'] = detail.backdrop_path ? detail.backdrop_path : '';
-            result['poster_path'] = detail.poster_path ? detail.poster_path : '';
+    try {
+        // eslint-disable-next-line no-undef
+        let final_films = await Promise.all(
+            films.map( async (film) => {
+                let detail = await searchDetails(film.title);
+                let result = { ...film }
+                result['backdrop_path'] = detail.backdrop_path ? detail.backdrop_path : 'noImage';
+                result['poster_path'] = detail.poster_path ? detail.poster_path : 'noImage';
 
-            return result;
-        })
-    )
-    return final_films;
+                return result;
+            })
+        )
+        return final_films;
+    } catch (error) {
+        console.error(error)
+        return error
+    }
+
 }
 
 /**
@@ -44,6 +50,7 @@ const searchDetails = async (title) => {
         return response.data.results[0];
     } catch (error) {
         console.error(error)
+        return error
     }
 }
 

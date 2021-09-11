@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <div>
             <Header aria-label="Peliculas">
-                <HeaderName href="#" prefix="Peliculas - ">
+                <HeaderName href="/" prefix="Peliculas - ">
                     Ghibli films
                 </HeaderName>
             </Header>
