@@ -50,9 +50,9 @@ code {
 /* -- Search -- */
 
 .row_search{
-  position: fixed;
+  position: absolute;
   width: 70%;
-  margin-left: 10%;
+  left: 15%;
 }
 
 .suggestion{
@@ -80,4 +80,70 @@ code {
 
 .slider1{
   margin-top: 3rem;
+}
+.title-link{
+  color: #474747;
+  text-decoration: none;
+}
+
+/* -- Footer -- */
+
+.footer {
+  background-color: #CACACA;
+  background-position: center;
+  width: 100%;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-top: 1.5rem;
+  order: 4;
+  text-align: center;
+}
+
+/* -- Films -- */
+
+.film-info{
+  border-bottom: 1px solid var(--primaryColor);
+  background-position: right -200px top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.film-back{
+  padding-bottom: 3rem;
+  background-image: linear-gradient(to right, rgba(5.49%, 10.20%, 15.69%, 1.00) 150px, rgba(5.49%, 10.20%, 15.69%, 0.84) 100%);
+}
+
+.film-poster{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.film-poster img{
+  margin-left: 2rem;
+  border-radius: 25px;  
+}
+
+.film-detail{
+  color: white;
+  padding-top: 10%;
+}
+
+.film-header{
+  font-weight: 600;
+}
+
+.score{
+  color: green;
+  font-size: 2.5rem;
+}
+
+.txt-grey{
+  color: #848282;
+}
+
+.link{
+  color: #a1b6e4;
+  text-decoration: none;
 }
