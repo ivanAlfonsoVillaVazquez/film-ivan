@@ -17,6 +17,6 @@ script:
   - npm run lint
   - npm set audit-level high
   - npm config set audit-level high
-  # - npm audit
+  - npm audit
   - npm run build
   - npm run test
