@@ -19,7 +19,6 @@ const Body = () => {
         const loadFilms = async()=>{
             try {
                 const response = await axios.get('https://ghibliapi.herokuapp.com/films')
-                console.log(response)
                 if( response.status == 200){
                     const final_films = await Functions.addInfo(response.data);
                     setFilms(final_films)
